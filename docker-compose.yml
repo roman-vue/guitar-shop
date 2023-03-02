@@ -1,15 +1,11 @@
-version: '3'
-
+version: '3.1'
 services:
   db:
-    image: postgres:14.3
+    image: postgres
     restart: always
-    ports:
-      - 5432:5432
     environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_DATABASE: ${GUITARDB}
-    container_name: guitardb
-    volumes:
-      - ./postgresql:/var/lib/postgresql/data
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: root
+      POSTGRES_DB: GUITARDB
+    ports:
+      - 8083:5432
