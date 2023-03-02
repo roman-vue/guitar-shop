@@ -4,8 +4,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_USER: root
-      POSTGRES_DB: GUITARDB
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_DATABASE}
     ports:
       - 8083:5432
