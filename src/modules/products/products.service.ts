@@ -13,7 +13,6 @@ export class ProductsService {
     try{
       const newProduct = this.productRepository.create(createProductDto)
       await this.productRepository.save(newProduct)
-      return newProduct
     }catch(error){
       Logger.error(`${HttpStatus.INTERNAL_SERVER_ERROR}`, `${error}`)
       return {statusbar: HttpStatus.INTERNAL_SERVER_ERROR, message: `help!`, error}
